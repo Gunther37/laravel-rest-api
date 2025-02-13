@@ -14,10 +14,10 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('logout', [AuthController::class, 'logout']);
     // http://127.0.0.1/api/protected
     Route::get('/protected', function () {
-        return 'Protected resource';
+        return response()->json('Protected resource');
     });
 });
 // http://127.0.0.1/api/unprotected
 Route::get('/unprotected', function () {
-    return 'Unprotected resource';
+    return response()->json('Unprotected resource');
 });
